@@ -3,16 +3,16 @@
 # Maintainer: Truocolo <truocolo@aol.com>
 # Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 
-_offline="true"
-_git="true"
+_offline="false"
+_git="false"
 _py="python"
-_pkg=evm-contract-abi-get
+_pkg=evm-contracts-abi-get
 pkgname="${_pkg}"
-pkgver=0.0.0.0.0.0.0.0.0.0.0.0.1.1
-_commit="e3f3f9e20147b7e1c09d6435026315976c08a73d"
+pkgver=0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1.1
+_commit="6ab3a5d81de6b72bb0aa764e07aca76f212636c8"
 pkgrel=1
 _pkgdesc=(
-  "Returns ABI of a smart contract on an EVM network"
+  "Returns ABI of a smart contract on an EVM network."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
@@ -56,7 +56,7 @@ _tag="${_commit}"
 _tag_name="commit"
 _tarname="${pkgname}-${_tag}"
 [[ "${_offline}" == "true" ]] && \
-  url="file://${HOME}/${pkgname}"
+  _url="file://${HOME}/${pkgname}"
 [[ "${_git}" == true ]] && \
   makedepends+=(
     "git"
@@ -73,7 +73,7 @@ _tarname="${pkgname}-${_tag}"
     _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
   elif [[ "${_tag_name}" == "commit" ]]; then
     _tar="${_tarname}.zip::${_url}/archive/${_commit}.zip"
-    _sum="61d0a0b21bb8e984ea36ce9c0688ab059f3ccddbb1527fbe6c7b898ab75652f9"
+    _sum="ba44ae171e0c7d5b91df4416b9c8f953c3be1834e95f67707af9cd113a90b16e"
   fi && \
     source+=(
       "${_tar}"
