@@ -1,3 +1,6 @@
-# Email bulk sender (`email-bulk-sender`)
+# `evm-contracts-abi-get`
 
-Sends bulk emails.
+universal recipe for [user repo](../themartiancompany/ur).
+
+[PKGBUILD](PKGBUILD)
+[LICENSE](COPYING)
