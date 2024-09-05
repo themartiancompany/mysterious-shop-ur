@@ -8,8 +8,8 @@ _git="false"
 _py="python"
 _pkg=evm-contracts-abi-get
 pkgname="${_pkg}"
-pkgver=0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1.1
-_commit="6ab3a5d81de6b72bb0aa764e07aca76f212636c8"
+pkgver=0.0.0.0.0.0.0.0.0.0.0.1.1.1
+_commit="733a5705cbe6c745aad85e34e5558dd18cd25574"
 pkgrel=1
 _pkgdesc=(
   "Returns ABI of a smart contract on an EVM network."
@@ -26,7 +26,7 @@ license=(
 )
 depends=(
   "${_py}"
-  "${_py}-aioetherscan"
+  "${_py}-aioetherscan>=0.9.5.1"
 )
 _os="$( \
   uname \
@@ -73,7 +73,7 @@ _tarname="${pkgname}-${_tag}"
     _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
   elif [[ "${_tag_name}" == "commit" ]]; then
     _tar="${_tarname}.zip::${_url}/archive/${_commit}.zip"
-    _sum="ba44ae171e0c7d5b91df4416b9c8f953c3be1834e95f67707af9cd113a90b16e"
+    _sum="a4f4f2592808424df445acf815a1e23c80a3fd1fd771d20655d795c4856eb230"
   fi && \
     source+=(
       "${_tar}"
