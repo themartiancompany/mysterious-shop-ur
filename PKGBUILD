@@ -6,6 +6,16 @@
 _offline="false"
 _git="false"
 _py="python"
+_py="python"
+_pyver="$( \
+  "${_py}" \
+    -V | \
+    awk \
+      '{print $2}')"
+_pymajver="${_pyver%.*}"
+_pyminver="${_pymajver#*.}"
+_pynextver="${_pymajver%.*}.$(( \
+  ${_pyminver} + 1))"
 _pkg=evm-contracts-abi-get
 pkgname="${_pkg}"
 pkgver=0.0.0.0.0.0.0.0.0.0.0.1.1.1
@@ -25,7 +35,8 @@ license=(
   AGPL3
 )
 depends=(
-  "${_py}"
+  "${_py}>=${_pymajver}"
+  "${_py}<${_pynextver}"
   "${_py}-aioetherscan>=0.9.5.1"
 )
 _os="$( \
