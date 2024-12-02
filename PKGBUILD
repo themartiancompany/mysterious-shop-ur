@@ -18,8 +18,9 @@ _pynextver="${_pymajver%.*}.$(( \
   ${_pyminver} + 1))"
 _pkg=evm-contracts-abi-get
 pkgname="${_pkg}"
-pkgver=0.0.0.0.0.0.0.0.0.0.0.1.1.1
-_commit="733a5705cbe6c745aad85e34e5558dd18cd25574"
+pkgver=0.0.0.0.0.0.0.0.0.0.0.1.1.1.1
+_aioetherscan_ver="0.9.5.3"
+_commit="e8654948a72b6d1db66a887ad9c9f7c1bb2ab9b3"
 pkgrel=1
 _pkgdesc=(
   "Returns ABI of a smart contract on an EVM network."
@@ -37,7 +38,7 @@ license=(
 depends=(
   "${_py}>=${_pymajver}"
   "${_py}<${_pynextver}"
-  "${_py}-aioetherscan>=0.9.5.1"
+  "${_py}-aioetherscan>=${_aioetherscan_ver}"
 )
 _os="$( \
   uname \
