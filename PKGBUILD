@@ -110,6 +110,10 @@ package() {
     install \
     --root="${pkgdir}" \
     --optimize=1
+  install \
+    -Dm644 \
+    "COPYING" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
 
 # vim: ft=sh syn=sh et
