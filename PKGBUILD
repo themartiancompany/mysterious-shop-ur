@@ -20,7 +20,7 @@ _pkg=evm-contracts-abi-get
 pkgname="${_pkg}"
 pkgver=0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1
 _eip3091_ver="0.9.6"
-_commit="4100e658d9d0296903069fbb8486093b512f4764"
+_commit="a0232ef17290983753b6fc0a1448c2f49ca5793a"
 pkgrel=1
 _pkgdesc=(
   "Returns ABI of a smart contract on an EVM network."
