@@ -18,9 +18,9 @@ _pynextver="${_pymajver%.*}.$(( \
   ${_pyminver} + 1))"
 _pkg=evm-contracts-abi-get
 pkgname="${_pkg}"
-pkgver=0.0.0.0.0.0.0.0.0.0.0.1.1.1.1
-_aioetherscan_ver="0.9.5.3"
-_commit="e8654948a72b6d1db66a887ad9c9f7c1bb2ab9b3"
+pkgver=0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1
+_eip3091_ver="0.9.6"
+_commit="4100e658d9d0296903069fbb8486093b512f4764"
 pkgrel=1
 _pkgdesc=(
   "Returns ABI of a smart contract on an EVM network."
@@ -33,12 +33,12 @@ _http="https://github.com"
 _ns="themartiancompany"
 url="${_http}/${_ns}/${pkgname}"
 license=(
-  AGPL3
+  "AGPL3"
 )
 depends=(
   "${_py}>=${_pymajver}"
   "${_py}<${_pynextver}"
-  "${_py}-aioetherscan>=${_aioetherscan_ver}"
+  "${_py}-eip3091>=${_eip3091_ver}"
 )
 _os="$( \
   uname \
@@ -53,6 +53,7 @@ optdepends=(
   optdepends+=(
   )
 makedepends=(
+  "cython"
   "${_py}-setuptools"
 )
 checkdepends=(
@@ -79,7 +80,8 @@ elif [[ "${_git}" == false ]]; then
     _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
   elif [[ "${_tag_name}" == "commit" ]]; then
     _src="${_tarname}.zip::${_url}/archive/${_commit}.zip"
-    _sum='31ac0b8014076f8c7cafa1c92c311359dc7f6f931e17c0a718c406cae77272f7'
+    # _sum='d2b3e99f8226b6296249a284784359282953ae956fbe554c79d1896db1140f11'
+    _sum="SKIP"
   fi
 fi
 source=(
