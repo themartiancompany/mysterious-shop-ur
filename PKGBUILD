@@ -19,15 +19,22 @@ _pynextver="${_pymajver%.*}.$(( \
 _pkg=evm-contracts-abi-get
 pkgname="${_pkg}"
 pkgver=0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1
-_eip3091_ver="0.9.6"
-_commit="a0232ef17290983753b6fc0a1448c2f49ca5793a"
+_eip3091_ver="0.9.6.1"
+_commit="a88f5617538e3b070923c1c9d4d8621b21e77068"
 pkgrel=1
 _pkgdesc=(
   "Returns ABI of a smart contract on an EVM network."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
-  any
+  'x86_64'
+  'arm'
+  'aarch64'
+  'armv7l'
+  'armv6l'
+  'mips'
+  'pentium4'
+  'i686'
 )
 _http="https://github.com"
 _ns="themartiancompany"
@@ -80,8 +87,7 @@ elif [[ "${_git}" == false ]]; then
     _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
   elif [[ "${_tag_name}" == "commit" ]]; then
     _src="${_tarname}.zip::${_url}/archive/${_commit}.zip"
-    # _sum='d2b3e99f8226b6296249a284784359282953ae956fbe554c79d1896db1140f11'
-    _sum="SKIP"
+    _sum='e9a93da00afb1d1fee13debb61aff98d9fdb0b7117dcb1e40033c761ba97e2a9'
   fi
 fi
 source=(
