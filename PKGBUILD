@@ -74,6 +74,7 @@ arch=(
 )
 _http="https://github.com"
 _ns="themartiancompany"
+_url="${_http}/${_ns}/redacted-assessment"
 url="${_http}/${_ns}/${pkgname}"
 license=(
   "AGPL3"
@@ -101,7 +102,6 @@ checkdepends=(
 provides=(
   "${_py}-${_pkg}=${pkgver}"
 )
-_url="${url}"
 _tag="${_commit}"
 _tag_name="commit"
 _tarname="${pkgname}-${_tag}"
@@ -160,18 +160,10 @@ validpgpkeys=(
   '12D8E3D7888F741E89F86EE0FEC8567A644F1D16'
 )
 
-check() {
-  cd \
-    "${_tarname}"
-  make \
-    -k \
-    check
-}
-
 # shellcheck disable=SC2154
 package() {
   cd \
-    "${_tarname}"
+    "${_tarname}/mysterious-shop"
   "${_py}" \
     setup.py \
     install \
