@@ -1,7 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0
 
-# SPDX-License-Identifier: AGPL-3.0
-
 #    ----------------------------------------------------------------------
 #    Copyright © 2024, 2025  Pellegrino Prevete
 #
@@ -54,14 +52,14 @@ _pymajver="${_pyver%.*}"
 _pyminver="${_pymajver#*.}"
 _pynextver="${_pymajver%.*}.$(( \
   ${_pyminver} + 1))"
-_pkg=evm-contracts-abi-get
+_pkg=mysterious-shop
 pkgname="${_pkg}"
-pkgver="0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1.1"
-_eip3091_ver="0.9.6.1"
+pkgver="0.0.0.0.0.0.0.0.0.0.0.1"
 _commit="a88f5617538e3b070923c1c9d4d8621b21e77068"
 pkgrel=1
 _pkgdesc=(
-  "Returns ABI of a smart contract on an EVM network."
+  "A mysterious shop I'm writing for"
+  "an assessment for a mysterious company."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
@@ -83,7 +81,7 @@ license=(
 depends=(
   "${_py}>=${_pymajver}"
   "${_py}<${_pynextver}"
-  "${_py}-eip3091>=${_eip3091_ver}"
+  "${_py}-appdirs"
 )
 [[ "${_os}" != "GNU/Linux" ]] && \
 [[ "${_os}" == "Android" ]] && \
@@ -95,7 +93,6 @@ optdepends=(
   optdepends+=(
   )
 makedepends=(
-  "cython"
   "${_py}-setuptools"
 )
 checkdepends=(
